@@ -1,0 +1,53 @@
+# ============================================================
+# Rahasia & kredensial — JANGAN pernah commit
+# ============================================================
+app.env
+.env
+*.env
+!*.env.contoh
+*.env.local
+run_cron.sh
+
+# Folder privat untuk file kunci (seluruh isinya diabaikan).
+secret/
+private/
+
+# Jaring pengaman berdasar pola nama umum file kunci:
+*service-account*.json
+*serviceaccount*.json
+*credentials*.json
+*client_secret*.json
+*-key.json
+sa_key.json
+*.key
+*.pem
+*.p12
+
+# ============================================================
+# Konfigurasi pilihan kolom (state lokal hasil runtime)
+# ============================================================
+config/config.json
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ============================================================
+# Log
+# ============================================================
+cron_pipeline.log
+*.log
+
+# ============================================================
+# Editor & OS
+# ============================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

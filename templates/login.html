@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Masuk — Bridge Odoo → BigQuery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<style>
+  .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .login-card{width:100%;max-width:360px;margin:0}
+  .login-brand{display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:22px}
+  .login-brand h1{font-size:18px;letter-spacing:-.02em}
+  .login-field{margin-bottom:14px}
+  .login-field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+  .login-field input{width:100%;box-sizing:border-box;background:var(--bg-2);
+    border:1px solid var(--line-2);border-radius:8px;padding:10px 12px;color:var(--text);
+    font-size:14px;font-family:var(--sans)}
+  .login-field input:focus{border-color:var(--accent);outline:none}
+  .login-btn{width:100%;justify-content:center;margin-top:4px}
+  .login-error{background:var(--red-bg);border:1px solid var(--red);color:var(--red);
+    padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="card login-card">
+    <div class="login-brand">
+      <div class="mark">⇄</div>
+      <div>
+        <h1>Bridge</h1>
+        <p class="mono sm muted">Odoo → BigQuery</p>
+      </div>
+    </div>
+
+    {% if error %}<div class="login-error">{{ error }}</div>{% endif %}
+
+    <form method="post" action="{{ url_for('login') }}">
+      <div class="login-field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" autofocus required />
+      </div>
+      <div class="login-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" class="btn btn-accent login-btn">Masuk</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

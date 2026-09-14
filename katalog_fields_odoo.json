@@ -1,0 +1,994 @@
+{
+  "crm_lead": {
+    "label_modul": "CRM Lead",
+    "model": "crm.lead",
+    "move_type": null,
+    "jumlah_field": 40,
+    "fields": [
+      {
+        "nama_teknis": "active",
+        "label": "Active",
+        "tipe": "boolean",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_exception_decoration",
+        "label": "Activity Exception Decoration",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_state",
+        "label": "Activity State",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_icon",
+        "label": "Activity Type Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "date_open",
+        "label": "Assignment Date",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "automated_probability",
+        "label": "Automated Probability",
+        "tipe": "float",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "campaign_id",
+        "label": "Campaign",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "city",
+        "label": "City",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "date_closed",
+        "label": "Closed Date",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "company_id",
+        "label": "Company",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "partner_name",
+        "label": "Company Name",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "partner_id",
+        "label": "Contact",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "contact_name",
+        "label": "Contact Name",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "country_id",
+        "label": "Country",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "create_date",
+        "label": "Created on",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "date_deadline",
+        "label": "Expected Closing",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "expected_revenue",
+        "label": "Expected Revenue",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_exception_icon",
+        "label": "Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "date_last_stage_update",
+        "label": "Last Stage Update",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "x_studio_lead_category",
+        "label": "Lead Category",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "lost_reason_id",
+        "label": "Lost Reason",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "medium_id",
+        "label": "Medium",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_calendar_event_id",
+        "label": "Next Activity Calendar Event",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_date_deadline",
+        "label": "Next Activity Deadline",
+        "tipe": "date",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_summary",
+        "label": "Next Activity Summary",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_id",
+        "label": "Next Activity Type",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "sale_order_count",
+        "label": "Number of Sale Orders",
+        "tipe": "integer",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "name",
+        "label": "Opportunity",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "priority",
+        "label": "Priority",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "probability",
+        "label": "Probability",
+        "tipe": "float",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_user_id",
+        "label": "Responsible User",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "x_studio_sales_rep",
+        "label": "Sales Rep",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "team_id",
+        "label": "Sales Team",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "user_id",
+        "label": "Salesperson",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "source_id",
+        "label": "Source",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "stage_id",
+        "label": "Stage",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "sale_amount_total",
+        "label": "Sum of Orders",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "tag_ids",
+        "label": "Tags",
+        "tipe": "many2many",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "type",
+        "label": "Type",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "won_status",
+        "label": "Won/Lost",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      }
+    ]
+  },
+  "customer_invoice": {
+    "label_modul": "Customer Invoice",
+    "model": "account.move",
+    "move_type": "out_invoice",
+    "jumlah_field": 40,
+    "fields": [
+      {
+        "nama_teknis": "abnormal_amount_warning",
+        "label": "Abnormal Amount Warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "abnormal_date_warning",
+        "label": "Abnormal Date Warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "access_warning",
+        "label": "Access warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "account_fiscal_country_group_codes",
+        "label": "Account Fiscal Country Group Codes",
+        "tipe": "json",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_exception_decoration",
+        "label": "Activity Exception Decoration",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_state",
+        "label": "Activity State",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_icon",
+        "label": "Activity Type Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entries_count",
+        "label": "Adjusting Entries Count",
+        "tipe": "integer",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_label",
+        "label": "Adjusting Entry Origin Label",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_move_ids",
+        "label": "Adjusting Entry Origin Moves",
+        "tipe": "many2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_moves_count",
+        "label": "Adjusting Entry Origin Moves Count",
+        "tipe": "integer",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "alerts",
+        "label": "Alerts",
+        "tipe": "json",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "amount_residual",
+        "label": "Amount Due",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "x_studio_branch",
+        "label": "Branch",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "company_id",
+        "label": "Company",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "adjusting_entries_move_ids",
+        "label": "Created Adjusting Entries",
+        "tipe": "many2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "create_date",
+        "label": "Created on",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "x_studio_document_subtype",
+        "label": "Document Subtype",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "invoice_date_due",
+        "label": "Due Date",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_exception_icon",
+        "label": "Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "invoice_date",
+        "label": "Invoice/Bill Date",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_calendar_event_id",
+        "label": "Next Activity Calendar Event",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_date_deadline",
+        "label": "Next Activity Deadline",
+        "tipe": "date",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_summary",
+        "label": "Next Activity Summary",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_id",
+        "label": "Next Activity Type",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "name",
+        "label": "Number",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "invoice_origin",
+        "label": "Origin",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "partner_id",
+        "label": "Partner",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "payment_state",
+        "label": "Payment Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "access_url",
+        "label": "Portal Access URL",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "ref",
+        "label": "Reference",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_user_id",
+        "label": "Responsible User",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "team_id",
+        "label": "Sales Team",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "invoice_user_id",
+        "label": "Salesperson",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "access_token",
+        "label": "Security Token",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "state",
+        "label": "Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_tax",
+        "label": "Tax",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_total",
+        "label": "Total",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "move_type",
+        "label": "Type",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_untaxed",
+        "label": "Untaxed Amount",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      }
+    ]
+  },
+  "vendor_bill": {
+    "label_modul": "Vendor Bill",
+    "model": "account.move",
+    "move_type": "in_invoice",
+    "jumlah_field": 40,
+    "fields": [
+      {
+        "nama_teknis": "abnormal_amount_warning",
+        "label": "Abnormal Amount Warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "abnormal_date_warning",
+        "label": "Abnormal Date Warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "access_warning",
+        "label": "Access warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "account_fiscal_country_group_codes",
+        "label": "Account Fiscal Country Group Codes",
+        "tipe": "json",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_exception_decoration",
+        "label": "Activity Exception Decoration",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_state",
+        "label": "Activity State",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_icon",
+        "label": "Activity Type Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entries_count",
+        "label": "Adjusting Entries Count",
+        "tipe": "integer",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_label",
+        "label": "Adjusting Entry Origin Label",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_move_ids",
+        "label": "Adjusting Entry Origin Moves",
+        "tipe": "many2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "adjusting_entry_origin_moves_count",
+        "label": "Adjusting Entry Origin Moves Count",
+        "tipe": "integer",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "alerts",
+        "label": "Alerts",
+        "tipe": "json",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "amount_residual_signed",
+        "label": "Amount Due Signed",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "x_studio_branch",
+        "label": "Branch",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "company_id",
+        "label": "Company",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "adjusting_entries_move_ids",
+        "label": "Created Adjusting Entries",
+        "tipe": "many2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "create_date",
+        "label": "Created on",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "invoice_date_due",
+        "label": "Due Date",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_exception_icon",
+        "label": "Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "invoice_date",
+        "label": "Invoice/Bill Date",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "journal_id",
+        "label": "Journal",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_calendar_event_id",
+        "label": "Next Activity Calendar Event",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_date_deadline",
+        "label": "Next Activity Deadline",
+        "tipe": "date",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_summary",
+        "label": "Next Activity Summary",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_id",
+        "label": "Next Activity Type",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "x_studio_note",
+        "label": "Note",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "name",
+        "label": "Number",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "invoice_origin",
+        "label": "Origin",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "partner_id",
+        "label": "Partner",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "payment_state",
+        "label": "Payment Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "access_url",
+        "label": "Portal Access URL",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "ref",
+        "label": "Reference",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_user_id",
+        "label": "Responsible User",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "access_token",
+        "label": "Security Token",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "state",
+        "label": "Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_tax",
+        "label": "Tax",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_total",
+        "label": "Total",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "move_type",
+        "label": "Type",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_untaxed",
+        "label": "Untaxed Amount",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "user_id",
+        "label": "User",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      }
+    ]
+  },
+  "sale_order": {
+    "label_modul": "Sales Order",
+    "model": "sale.order",
+    "move_type": null,
+    "jumlah_field": 40,
+    "fields": [
+      {
+        "nama_teknis": "access_warning",
+        "label": "Access warning",
+        "tipe": "text",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_ids",
+        "label": "Activities",
+        "tipe": "one2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_exception_decoration",
+        "label": "Activity Exception Decoration",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_state",
+        "label": "Activity State",
+        "tipe": "selection",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_icon",
+        "label": "Activity Type Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "amount_invoiced",
+        "label": "Already invoiced",
+        "tipe": "monetary",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "amount_undiscounted",
+        "label": "Amount Before Discount",
+        "tipe": "float",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "authorized_transaction_ids",
+        "label": "Authorized Transactions",
+        "tipe": "many2many",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "auto_generated",
+        "label": "Auto Generated Sales Order",
+        "tipe": "boolean",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "x_studio_branch",
+        "label": "Branch",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "campaign_id",
+        "label": "Campaign",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "company_id",
+        "label": "Company",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "create_date",
+        "label": "Creation Date",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "partner_id",
+        "label": "Customer",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "client_order_ref",
+        "label": "Customer Reference",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "commitment_date",
+        "label": "Delivery Date",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "delivery_status",
+        "label": "Delivery Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "validity_date",
+        "label": "Expiration",
+        "tipe": "date",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_exception_icon",
+        "label": "Icon",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "invoice_status",
+        "label": "Invoice Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "activity_calendar_event_id",
+        "label": "Next Activity Calendar Event",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_date_deadline",
+        "label": "Next Activity Deadline",
+        "tipe": "date",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_summary",
+        "label": "Next Activity Summary",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_type_id",
+        "label": "Next Activity Type",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "date_order",
+        "label": "Order Date",
+        "tipe": "datetime",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "name",
+        "label": "Order Reference",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_paid",
+        "label": "Payment Transactions Amount",
+        "tipe": "float",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "access_url",
+        "label": "Portal Access URL",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "activity_user_id",
+        "label": "Responsible User",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "x_studio_sales_rep",
+        "label": "Sales Rep",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "team_id",
+        "label": "Sales Team",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "user_id",
+        "label": "Salesperson",
+        "tipe": "many2one",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "access_token",
+        "label": "Security Token",
+        "tipe": "char",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "origin",
+        "label": "Source Document",
+        "tipe": "char",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "auto_purchase_order_id",
+        "label": "Source Purchase Order",
+        "tipe": "many2one",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "state",
+        "label": "Status",
+        "tipe": "selection",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_tax",
+        "label": "Taxes",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_total",
+        "label": "Total",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      },
+      {
+        "nama_teknis": "amount_to_invoice",
+        "label": "Un-invoiced Balance",
+        "tipe": "monetary",
+        "sedang_dipakai": false
+      },
+      {
+        "nama_teknis": "amount_untaxed",
+        "label": "Untaxed Amount",
+        "tipe": "monetary",
+        "sedang_dipakai": true
+      }
+    ]
+  }
+}

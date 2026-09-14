@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bridge — Odoo → BigQuery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="page">
+
+  <!-- ============================== Topbar ============================== -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark">⇄</div>
+      <div>
+        <h1>Bridge</h1>
+        <p class="mono">Odoo → BigQuery</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="conn">
+        <span class="dot" id="conn_dot"></span>
+        <span id="conn_text" class="muted sm">memuat…</span>
+      </div>
+      <form method="post" action="/logout" style="margin:0">
+        <button type="submit" class="btn btn-gray sm">Keluar</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ============================== Hero: saklar ==================== -->
+    <section class="hero">
+      <div class="hero-state">
+        <div class="hero-left">
+          <span class="pulse" id="pulse_dot"></span>
+          <div>
+            <div class="hero-label" id="hero_label">Memuat status…</div>
+            <div class="hero-sub muted" id="hero_sub">&nbsp;</div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-green" id="btn_start">▶ Mulai Sinkronisasi Otomatis</button>
+          <button class="btn btn-gray" id="btn_stop">■ Hentikan</button>
+          <button class="btn btn-outline" id="btn_run_now">↻ Jalankan Sekarang</button>
+        </div>
+      </div>
+      <div class="hero-summary">
+        <div class="sum"><span class="sum-num" id="sum_sukses">–</span><span class="sum-label ok">berhasil</span></div>
+        <div class="sum"><span class="sum-num" id="sum_gagal">–</span><span class="sum-label err">gagal</span></div>
+        <div class="sum"><span class="sum-num" id="sum_dilewati">–</span><span class="sum-label warn">dilewati</span></div>
+        <div class="sum"><span class="sum-num" id="sum_baris">–</span><span class="sum-label">total baris</span></div>
+        <div class="sum wide"><span class="sum-num sm" id="sum_waktu">–</span><span class="sum-label">sync terakhir</span></div>
+      </div>
+    </section>
+
+    <!-- output Jalankan Sekarang -->
+    <section class="card runlog" id="runlog_card" hidden>
+      <div class="runlog-head">
+        <span id="runlog_title">Menjalankan…</span>
+        <button class="link" id="runlog_close">tutup</button>
+      </div>
+      <pre id="runlog_pre"></pre>
+    </section>
+
+    <!-- ============================== Pemilih kolom ================== -->
+    <section class="card">
+      <div class="section-head">
+        <h2>Kolom per sumber</h2>
+        <p class="muted sm">Pilih kolom yang ditarik ke BigQuery. Perubahan tersimpan otomatis dan dipakai cron.</p>
+      </div>
+      <div id="modules"></div>
+    </section>
+
+    <!-- ============================== Riwayat ======================== -->
+    <section class="card">
+      <div class="toolbar">
+        <div class="tabs" id="modul_tabs">
+          <button class="tab is-active" data-modul="semua">Semua</button>
+        </div>
+        <input id="search" type="text" placeholder="Cari modul, status, pesan…" />
+        <label class="chk"><input type="checkbox" id="auto_refresh" checked /> Auto-refresh</label>
+        <button class="btn btn-outline sm" id="btn_refresh">↻ Refresh</button>
+        <button class="btn btn-red sm" id="btn_clear_log">🗑 Hapus Riwayat</button>
+      </div>
+      <div class="table-info"><span id="row_count">Menampilkan 0 riwayat</span></div>
+      <div class="table-scroll">
+        <table id="log_table">
+          <thead>
+            <tr>
+              <th>Waktu</th><th>Sumber</th><th>Tabel Tujuan</th><th>Mode</th>
+              <th>Status</th><th class="num">Baris</th><th class="num">Durasi</th>
+              <th>Dipicu</th><th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody id="log_body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================== Zona berbahaya ================= -->
+    <section class="card danger-card">
+      <div>
+        <b>Kosongkan Tabel BigQuery</b>
+        <p class="muted sm">Mengosongkan tabel staging (crm_lead_staging, customer_invoice_staging, vendor_bill_staging) di BigQuery. <b>Tidak menghapus apa pun di Odoo</b> — hanya salinan datanya. Sync berikutnya mengisinya lagi dari awal.</p>
+      </div>
+      <button class="btn btn-red" id="btn_clear_data">Kosongkan Tabel BigQuery</button>
+    </section>
+
+  </main>
+</div>
+
+<!-- modal konfirmasi -->
+<div class="modal" id="confirm_modal" hidden>
+  <div class="modal-box">
+    <h3 id="confirm_title">Konfirmasi</h3>
+    <p id="confirm_body" class="muted"></p>
+    <label class="confirm-input">Ketik <code>HAPUS</code> untuk konfirmasi
+      <input type="text" id="confirm_text" autocomplete="off" />
+    </label>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="confirm_cancel">Batal</button>
+      <button class="btn btn-red" id="confirm_ok">Konfirmasi</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

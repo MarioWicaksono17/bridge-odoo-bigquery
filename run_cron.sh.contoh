@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# =====================================================================
+# run_cron.sh — pembungkus cron untuk Hostinger.
+#
+# Sejak konfigurasi disatukan ke app.env, skrip ini TIDAK lagi memuat
+# kredensial. Ia cukup menjalankan run_pipeline.py; Python membaca semua
+# environment variable sendiri dari app.env (lihat config_store.py).
+#
+# CARA PAKAI:
+#   1. Salin jadi run_cron.sh:   cp run_cron.sh.contoh run_cron.sh
+#   2. Sesuaikan path folder & python venv di bawah bila berbeda.
+#   3. Amankan:  chmod 700 run_cron.sh
+#   4. Uji manual:  bash run_cron.sh   (cek cron_pipeline.log)
+#   5. Jadwalkan lewat crontab (atau ./install_cron.sh).
+#
+# Semua kredensial ada di app.env (chmod 600), BUKAN di file ini.
+# =====================================================================
+set -euo pipefail
+
+# Folder aplikasi (tempat app.env & run_pipeline.py berada):
+cd /home/deploy/pipeline
+
+# Jalankan penarikan sekali. Ganti path python bila venv Anda di lokasi lain.
+venv/bin/python run_pipeline.py >> cron_pipeline.log 2>&1
+
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] cron selesai." >> cron_pipeline.log
